@@ -7,7 +7,7 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class DefaultDialogs {
-    public static Dialog generateErrorDialog(String message) {
+    public static Dialog generateSimpleDialog(String message) {
         Dialog dialog = new Dialog();
         Button closeButton = new Button("Close", VaadinIcon.CLOSE.create());
 
