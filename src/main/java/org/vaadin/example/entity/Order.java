@@ -21,6 +21,7 @@ public class Order {
     @ManyToOne
     private Candy candy;
 
+    private int number;
     private double price;
     private boolean inProgress;
     private boolean delivered;

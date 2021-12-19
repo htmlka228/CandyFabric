@@ -63,6 +63,7 @@ public class OrderView {
 
         grid.addColumn("id");
         grid.addColumn(order -> order.getCandy().getName()).setHeader("Candy Name");
+        grid.addColumn("number");
         grid.addColumn("price");
 
         grid.setItems(orders);

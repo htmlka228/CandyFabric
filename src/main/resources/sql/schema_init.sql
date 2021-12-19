@@ -14,6 +14,7 @@ create table candy_fabric (
 
 create table orders (
     id bigserial not null,
+    number int8,
     price double precision,
     in_progress bool,
     delivered bool,
@@ -44,9 +45,9 @@ create table users (
     primary key (id)
 );
 
-create table roles (
+create table user_roles (
     user_id bigserial not null,
-    role_name varchar(255)
+    roles varchar(255)
 );
 
 create table shop_orders (

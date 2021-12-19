@@ -17,4 +17,11 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
             nativeQuery = true
     )
     Optional<Supplier> findById(@Param("id") Long id);
+
+    @Query(
+            value = "select * from supplier" +
+                    " where name = :name",
+            nativeQuery = true
+    )
+    Optional<Supplier> findByName(@Param("name") String name);
 }

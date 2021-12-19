@@ -45,11 +45,12 @@ public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery("select username,password,active from users where username = ?")
-                .authoritiesByUsernameQuery("select username, role_name from roles" +
-                        " join users on users.id = roles.user_id" +
+                .authoritiesByUsernameQuery("select username, roles from user_roles" +
+                        " join users on users.id = user_roles.user_id" +
                         " where username = ?"
                 )
-                .rolePrefix("ROLE_");
+                .rolePrefix("ROLE_")
+                .passwordEncoder(encoder());
 
 //        auth.inMemoryAuthentication().withUser("shop").password(encoder().encode("shop")).roles("SHOP_USER");
     }

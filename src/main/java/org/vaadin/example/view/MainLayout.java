@@ -38,13 +38,15 @@ public class MainLayout extends AppLayout {
         RouterLink shopLink = new RouterLink("Shop Panel", ShopView.class);
         RouterLink fabric = new RouterLink("Fabric Panel", CandyFabricView.class);
         RouterLink supplier = new RouterLink("Supplier Panel", SupplierView.class);
+        RouterLink admin = new RouterLink("Admin Panel", AdminView.class);
 
         shopLink.setHighlightCondition(HighlightConditions.sameLocation());
 
         addToDrawer(new VerticalLayout(
                 shopLink,
                 fabric,
-                supplier
+                supplier,
+                admin
         ));
     }
 }

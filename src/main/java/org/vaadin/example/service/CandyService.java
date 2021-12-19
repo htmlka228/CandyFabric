@@ -15,4 +15,8 @@ public class CandyService {
     public List<Candy> getAllCandies() {
         return candyRepository.findAll();
     }
+
+    public Candy save(Candy candy) {
+        return candyRepository.save(candy);
+    }
 }

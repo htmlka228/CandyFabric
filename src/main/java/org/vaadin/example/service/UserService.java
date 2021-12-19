@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.vaadin.example.entity.User;
 import org.vaadin.example.repository.UserRepository;
 
 @Service
@@ -15,5 +16,9 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByUsername(username);
+    }
+
+    public User save(User user) {
+        return userRepository.save(user);
     }
 }
